@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        box-sizing: border-box;
+        margin: 0px;
+        text-decoration: none;
+        background-color: rgb(170, 221, 221);
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+    }
+
+.container{
+    z-index: 11;
+    margin:30px;
+    height:500px;
+    width:300px;
+    position: relative;
+    background-color: rgb(39, 21, 21);
+}
+.screen{
+    background-color: rgba(180, 138, 138, 0.966);
+    position: absolute;
+    height:110px;
+    width: 280px;
+    right :10px;
+    top:10px;
+    bottom: 10px;
+    z-index: 12;
+    font-weight: bolder;
+
+}
+
+.buttons{
+    position: absolute;
+    height:350px;
+    width:280px;
+    background-color: brown;
+    margin: 10px;
+    top:125px;
+    display: flexbox;
+    flex-direction: row;
+    font-weight: bolder;
+    font-size: large;
+ 
+}
+
+
+input[type ="button"]{
+    background-color: rgb(231, 152, 152);
+    height:78px;
+    margin:-5px;
+    width:75px;
+    transform: translate(3px,5px);
+    border:0.5px solid rgb(24, 10, 10);
+    font-weight: bolder;
+    font-size: large;
+   
+  
+}
+input[type="button"]:last-child{
+    width:144px;
+    background-color: rgb(230, 88, 88);
+}
+input[type="button"]:nth-child(3){
+   
+   background-color:purple;
+}
+input[type="button"]:nth-child(7){
+   
+   background-color:purple;
+}
+input[type="button"]:nth-child(11){
+   
+   background-color:purple;
+}
+input[type="button"]:nth-child(15){
+   
+   background-color:purple;
+}
+
+
+input[type="button"]:nth-child(1){
+   
+   background-color:#ff0000;
+   width: 144px;
+}
+
+
+
+input[type="button"]:active{
+   
+    background-color: red;
+}
+.screen p{
+    float:right;
+    position: absolute;
+   top:50px;
+   right:10px;
+   font-size: x-large;
+}
+#buffer{
+    font-size: large;
+}
+</style>
+<body>
+    <!-- container -->
+    <div class="container">
+..      <form name="forms">
+    <!-- Screen -->
+                <div class="screen">
+                    <input type="text" id="buffer"  value=""   disabled style="background-color: rgba(180, 138, 138, 0.966); border:solid rgba(180, 138, 138, 0.966);   font-weight: bolder;">
+               <p id="bf">0</p>
+                </div>
+    <!-- button_section -->
+                <div class="buttons">
+                    <input type="button" value="C" id="Reset" onclick = clearr()>
+                   
+        
+                    <input type="button" value="%" id="mod"  onclick = calculate(value)>
+                   
+                    <input type="button" value="/" id="divide" onclick = calculate(value)>
+                    <input type="button" value="7" id="seven" onclick = calculate(value)>
+                    <input type="button" value="8" id="eight" onclick = calculate(value)>
+                    <input type="button" value="9" id="nine" onclick = calculate(value)>
+                    <input type="button" value="*" id="asterick" onclick = calculate(value)>
+                    <input type="button" value="4" id="four" onclick = calculate(value)>
+                    <input type="button" value="5" id="five" onclick = calculate(value)>
+                    <input type="button" value="6" id="six" onclick = calculate(value)>
+                    <input type="button" value="-" id="minus" onclick = calculate(value)>
+                    <input type="button" value="1" id="one" onclick = calculate(value)>
+                    <input type="button" value="2" id="two" onclick = calculate(value)>
+                    <input type="button" value="3" id="three" onclick = calculate(value)>
+                    <input type="button" value="+" id="plus" onclick = calculate(value)>
+                    <input type="button" value="0" id="zero" onclick = calculate(value)>
+                    <input type="button" value="." id="dot" onclick = calculate(value)>
+                    <input type="button" value="=" id="equals" onclick = eva()>
+                  
+
+
+
+               </div>
+         </form>
+    </div> 
+</body>
+<script>
+    function calculate(value){
+        
+    document.forms.buffer.value  =document.forms.buffer.value   +""+ value;
+    
+
+  
+    }
+    function eva(){
+        
+        var x=eval(document.forms.buffer.value);
+      
+        document.getElementById("bf").innerHTML=x;
+    }
+    function clearr(){
+        document.forms.buffer.value ="" 
+        document.getElementById("bf").innerHTML=0;
+    }
+
+    function timing(){
+        return helll;
+    }
+</script> 
+</html

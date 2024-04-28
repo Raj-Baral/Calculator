@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        margin:50px;
+        height:500px;
+        width:500px;
+        background-color:rgb(241, 180, 66);
+        border-radius: 50%;
+        align-items: center;
+        display: flex;
+        position: relative;
+        box-shadow: -1px -1px 5px #dd4d4d73,
+              1px 1px 3px rgba(91, 30, 204, 0.288);
+    }
+    .clock{
+        margin:50px;
+        height:400px;
+        width:400px;
+        background-color: wheat;
+        border-radius: 50%;
+        display: flex;
+      justify-content: center;
+      align-items: center;
+       
+        
+    }
+    .nut{
+        height:15px;
+        width:15px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        
+
+
+    }
+ 
+    #hour{
+        background-image: linear-gradient( to bottom,rgb(14, 12, 12) 60%,wheat 50%);
+        height:200px;
+        position: absolute;   
+         width: 7px;
+         z-index:1; 
+         border-top-left-radius: 50%;
+         border-top-right-radius: 50%;
+         
+    }
+    #minute{
+        background-image: linear-gradient( to bottom,rgb(14, 12, 12) 60%,wheat 50%);
+        height:240px;
+        position: absolute;   
+         width: 5px;
+         z-index:20; 
+         border-top-left-radius: 50%;
+         border-top-right-radius: 50%;
+        
+    }
+    #second{
+        background-image: linear-gradient( to bottom,rgb(14, 12, 12) 60%,wheat 50%);
+        height:320px;
+        position: absolute;   
+         width: 3px;
+         z-index:30; 
+       
+         border-top-left-radius: 50%;
+         border-top-right-radius: 50%;
+           
+    }
+   
+    .indicators{
+        position: absolute;
+        transform: translate(-4px ,-6px);
+    }
+    
+    .indicators div{
+        background-color: rgb(14, 13, 13);
+        position: absolute;
+        height:15px;
+        width:5px;
+        z-index: 1;
+        
+   
+    }
+    .indicators  :nth-child(1){
+        transform: rotate(30deg) translateY(-180px)
+    }
+    .indicators  :nth-child(2){
+        transform: rotate(60deg) translateY(-180px)
+    }
+    .indicators :nth-child(3){
+        transform: rotate(90deg) translateY(-180px)
+    }
+    .indicators :nth-child(4){
+        transform: rotate(120deg) translateY(-180px)
+    }
+    .indicators  :nth-child(5){
+        transform: rotate(150deg) translateY(-180px)
+    }
+    .indicators  :nth-child(6){
+        transform: rotate(180deg) translateY(-180px)
+    }
+    .indicators :nth-child(7){
+        transform: rotate(210deg) translateY(-180px)
+    }
+  
+    .indicators  :nth-child(8){
+        transform: rotate(240deg) translateY(-180px)
+    }
+    .indicators  :nth-child(9){
+        transform: rotate(270deg) translateY(-180px)
+    }
+    .indicators :nth-child(10){
+        transform: rotate(300deg) translateY(-180px)
+    }
+    .indicators :nth-child(11){
+        transform: rotate(330deg) translateY(-180px)
+    }
+    .indicators :nth-child(12){
+        transform: rotate(360deg) translateY(-180px)
+    }G
+
+
+  
+  
+</style>
+<body>
+    
+
+<div class="container">
+   <div class="clock">
+       <div class="nut"></div>
+       <div id="hour"></div>
+       <div id="minute"></div>
+       <div id="second"></div>
+       <div class="indicators">
+           <div></div>
+           <div></div>
+           <div></div>G
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+       </div>
+
+
+
+   </div>
+</div>
+</body>
+<script>
+
+var sec=document.getElementById("second");
+var min=document.getElementById("minute");
+var hr=document.getElementById("hour");
+setInterval(refresh,1000);
+function refresh(){
+        let time  = new Date();
+        let secs = time.getSeconds() * 6;
+        let mins = time.getMinutes() * 6;
+        let hrs = time.getHours() * 30;
+        sec.style.transform = `rotate(${secs}deg)`;
+        min.style.transform = `rotate(${mins}deg)`;
+        hr.style.transform = `rotate(${hrs+(mins/12)}deg)`;
+      }
+
+
+
+</script>
+</html>
